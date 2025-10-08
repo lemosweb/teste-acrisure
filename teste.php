@@ -6,7 +6,7 @@ $testeFraseOfensiva1 = "This website is for losers LOL!";
 $testeMaiorMenor = "1 9 6 4 3 1 -5";
 $testeTextoInicial = "Ditoso seja aquele que somente"; $testeTextoFinal = "somenEte";
 $testeInverterPalavrasEmUmaFrase = "Gonna stand my ground and I won't back down";
-$testeCaracteresUnicos = "pasta de peixe é ruim";
+$testeCaracteresDistintos = "pasta de peixe é ruim";
 $testeInterseccaoArray1 = ['a', 'b', 'c', 'd', 'e', 'f']; $testeInterseccaoArray2 = ['e', 'f', 'g', 'h', 'i'];
 $testeStringsParaCompactar = "aaaaabcdddeeeeeeaaa";
 $testeParentesesASeremBalanceados = ["(())", "(()", "())(", "()()()", "(((()()())))((()))", ")()()()"];
@@ -66,7 +66,7 @@ function inverterPalavrasemUmaFrase(string $fraseParaInverter) {
 }
 
 // EXERCICIO 6 
-function contarCaracteresUnicos(string $texto) {
+function contarCaracteresDistintos(string $texto) {
     $textoSemEspacos = preg_replace("/[^a-zA-Z]/", "", $texto);
     $textoEmArray = str_split($textoSemEspacos);
     sort($textoEmArray);
@@ -76,12 +76,10 @@ function contarCaracteresUnicos(string $texto) {
         if ($swap != $textoEmArray[$i]) {
             $swap = $textoEmArray[$i];
             $unicas[] = $textoEmArray[$i];
-        } else {
-            $unicas = array_filter($unicas, fn($valor) => $valor !== $textoEmArray[$i]);
-        }        
+        }    
     }
 
-    return implode(", ", $unicas);
+    return "Quantidade: " . count($unicas) . ". Caracteres: " .implode(", ", $unicas);
 }
 
 // EXERCICIO 7
@@ -199,9 +197,9 @@ echo "\n";
 echo "\n";
 echo "\n";
 echo "6 - Contar caracteres únicos:\n";
-echo "Sentença: '" . $testeCaracteresUnicos . "'\n";
+echo "Sentença: '" . $testeCaracteresDistintos . "'\n";
 echo "Resultado:\n";
-var_dump(contarCaracteresUnicos($testeCaracteresUnicos));
+var_dump(contarCaracteresDistintos($testeCaracteresDistintos));
 echo "\n";
 echo "\n";
 echo "\n";
