@@ -2,7 +2,7 @@
 
 * Rotina criada em PHP 8.3
 
-Para executar...
+Para executar, no console...
 ```
 php teste.php
 ```
