@@ -147,8 +147,6 @@ function validarParentesesBalanceado(string $parenteses) {
     return $balanceamento;
 }
 
-var_dump(validarParentesesBalanceado("(((()()())))((()))"));
-
 //Saídas
 echo "=======================================================\n";
 echo "|                    RESULTADOS                       |\n";
